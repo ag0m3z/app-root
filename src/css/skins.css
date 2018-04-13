@@ -52,12 +52,15 @@
   border-bottom: 0 solid transparent;
 }
 .skin-siac .main-sidebar{
-  background-color: rgba(0, 0, 0, 0.81) !important;
+  background-color: rgba(0, 0, 0, 0.583) !important;
 }
 .skin-siac .wrapper,
-.skin-siac .left-side {
-  background: url("../img/sidebar/sidebar-3.jpg") !important; ;
+.skin-siac .left-side img {
+  background: url('../img/sidebar/sidebar-3.jpg') fixed ;
+  background-size: contain;
+
 }
+
 .skin-siac .user-panel > .info,
 .skin-siac .user-panel > .info > a {
   color: #fff;

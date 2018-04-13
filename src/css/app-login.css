@@ -1,0 +1,10 @@
+body {
+
+    background: rgb(0,108,207);
+background: linear-gradient(95deg, rgba(0,108,207,1) 1%, rgba(51,146,227,1) 12%, rgba(84,171,240,1) 30%, rgba(84,171,240,1) 73%, rgba(51,146,227,1) 89%, rgba(0,108,207,1) 99%);  
+
+}
+
+.text-white{
+    color:#fff !important;
+}

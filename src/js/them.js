@@ -759,5 +759,14 @@ function _init() {
     });
   };
 
+  $('.sidebar-menu li').click(
+    function () {
+        $(".sidebar-menu li").removeClass("active");
+        $(this).addClass("active");
+  });
+
+  
+
+
 
 }(jQuery));

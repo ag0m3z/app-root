@@ -81,7 +81,7 @@ body {
     margin-left: 0;
   }
   .navbar-custom-menu{
-    display:none; !important;
+    display:none !important;
   }
 }
 @media (min-width: 768px) {
