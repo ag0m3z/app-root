@@ -1,0 +1,91 @@
+/**
+  Skin Sistema Siac
+ */
+.skin-siac .main-header .navbar {
+  background-color: #00BCD4;
+}
+.skin-siac .main-header .navbar .nav > li > a {
+  color: #ffffff;
+}
+.skin-siac .main-header .navbar .nav > li > a:hover,
+.skin-siac .main-header .navbar .nav > li > a:active,
+.skin-siac .main-header .navbar .nav > li > a:focus,
+.skin-siac .main-header .navbar .nav .open > a,
+.skin-siac .main-header .navbar .nav .open > a:hover,
+.skin-siac .main-header .navbar .nav .open > a:focus,
+.skin-siac .main-header .navbar .nav > .active > a {
+  background-color:transparent;
+  color: #f6f6f6;
+}
+.skin-siac .main-header .navbar .sidebar-toggle {
+  color: #ffffff;
+}
+.skin-siac .main-header .navbar .sidebar-toggle:hover {
+  color: #f6f6f6;
+  background: rgba(0, 0, 0, 0.1);
+}
+.skin-siac .main-header .navbar .sidebar-toggle {
+  color: #fff;
+}
+.skin-siac .main-header .navbar .sidebar-toggle:hover {
+  background-color: #607D8B;
+}
+@media (max-width: 767px) {
+  .skin-siac .main-header .navbar .dropdown-menu li.divider {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .skin-siac .main-header .navbar .dropdown-menu li a {
+    color: #fff;
+  }
+  .skin-siac .main-header .navbar .dropdown-menu li a:hover {
+    background: #607D8B;
+  }
+  .skin-siac .main-header .logo {
+    background-color: #212121 !important;
+    color: #ffffff;
+    border-bottom: 0 solid transparent;
+  }
+}
+.skin-siac .main-header .logo {
+  background-color:transparent;
+  color: #ffffff;
+  border-bottom: 0 solid transparent;
+}
+.skin-siac .main-sidebar{
+  background-color: rgba(0, 0, 0, 0.81) !important;
+}
+.skin-siac .wrapper,
+.skin-siac .left-side {
+  background: url("../img/sidebar/sidebar-3.jpg") !important; ;
+}
+.skin-siac .user-panel > .info,
+.skin-siac .user-panel > .info > a {
+  color: #fff;
+}
+.skin-siac .main-header .navbar .sidebar-toggle {
+  color: #ffffff;
+}
+.skin-siac .main-header .navbar .sidebar-toggle:hover {
+  color: #f6f6f6;
+  background: rgba(0, 0, 0, 0.1);
+}
+.skin-siac .main-header .navbar .sidebar-toggle {
+  color: #fff;
+}
+.skin-siac .sidebar-menu > li > a {
+  color:#FFFFFF !important;
+  border-left: 0 solid transparent;
+  margin: 3px;
+}
+.skin-siac .sidebar-menu > li.active > a {
+  margin:3px;
+  border-radius: 4px ;
+  color: #ffffff;
+  background: #00ACC1;
+}
+.skin-siac .sidebar-menu > li:hover > a{
+  margin:3px;
+  border-radius: 4px ;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.25);
+}
