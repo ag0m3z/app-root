@@ -9,6 +9,7 @@ header("Cache-Control: no-store, no-cache, must-revalidate");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 
+
 class CoreApp {
 
 
@@ -23,7 +24,7 @@ class CoreApp {
 
         $Type = strtolower($Type);
 
-        echo header("Content-Type:application/'.$Type.'; charset=utf-8");
+        echo header("Content-Type: application/$Type; charset=utf-8");
 
     }
     /**
@@ -82,9 +83,9 @@ class CoreApp {
     /**
      * Funcion para retornar una respuesta en formato JSON
      */
-    public static function getResponseJson(){
+    public static function getResponseJson($message = 'datos invalidos',$result = false, $data = array() ){
 
-
+        echo json_encode(array('result'=>$result,'message'=>$message,'data'=>$data) );
 
     }
 

@@ -1,12 +1,10 @@
-/*! Hockma Soluciones app.js
+/*!
+ *
+ *  Hockma Soluciones app.js
  * ================
  * 
- * @Author  Almsaeed Studio
+ * @Author  Alejandro Gomez
  * @Tema AdminLTE v2
- * @Support <http://www.almsaeedstudio.com>
- * @Email   <support@almsaeedstudio.com>
- * @version 2.3.2
- * @license MIT <http://opensource.org/licenses/MIT>
  */
 
 //Make sure jQuery has been loaded before app.js
@@ -683,8 +681,10 @@ function _init() {
   //Variables Generales
   var _usuario = '',
       _password = '',
+      _nickname = '',
       _titulo = 'Hockma Soluciones',
       _UrlApi = '',
+      _Key = '',
       _UrlMetodo = '',
       _enableConsole = true,
       MyConsole = function(logconsole){
@@ -766,9 +766,45 @@ function _init() {
         {
           usuario:_usuario,
           password:_password
-        }
+        },
       ).then(function(response){
+          
           MyConsole(response);
+
+          if(response.data.result){
+            
+            axios({
+              url:'app/controller/ControllerLogin.php',
+              method:"post",
+              data: {
+                  key:response.data.data.key,
+                  idusuario:response.data.data.idusuario,
+                  idperfil:response.data.data.idperfil,
+                  idestado:response.data.data.idestado,
+                  nombre:response.data.data.nombre,
+                  usuario:response.data.data.usuario
+              }
+            }).then(function(data){
+
+              MyConsole(data);
+
+              if(data.data.result){
+
+                //localStorage.setItem('key','125421245');
+                //location.reload();
+
+              }else{
+                MyAlert(data.data.message);
+              }
+
+            }).catch(function(error){
+              MyConsole(error);
+              axiosError(error);
+            });
+
+          }else{
+            MyAlert(response.data.message);
+          }
 
       }).catch(function(error){
           axiosError(error);
