@@ -684,8 +684,36 @@ function _init() {
   var _usuario = '',
       _password = '',
       _titulo = 'Hockma Soluciones',
-      MyAlert = function(message,size = 'small'){
-        
+      _UrlApi = '',
+      _UrlMetodo = '',
+      _enableConsole = true,
+      MyConsole = function(logconsole){
+        if(_enableConsole){
+          console.log(logconsole);
+        }
+      },
+      axiosError = function(objectError){
+
+        if (objectError.response.status === 0) {
+          MyAlert('Not connect: Verify Network.');
+        } else if (objectError.response.status == 404) {
+            MyAlert('Requested page not found [404]');
+        } else if (objectError.response.status == 500) {
+            MyAlert('Internal Server Error [500].');
+        }else if(objectError.response.status == 405){
+            MyAlert("Metodo no Soportado [405]");
+        } else if (objectError.response.statusText === 'parsererror') {
+            MyAlert('Requested JSON parse failed.');
+        } else if (objectError.response.statusText === 'timeout') {
+            MyAlert('Time out error.');
+        } else if (objectError.response.statusText === 'abort') {
+            MyAlert('Ajax request aborted.');
+        } else {
+            MyAlert('Uncaught Error: ' + objectError.response.data.message + ' <br> Codigo: '+objectError.response.status);
+        }
+
+      },
+      MyAlert = function(message,size = 'small'){  
         bootbox.alert({
           size: size,
           message: message
@@ -696,13 +724,14 @@ function _init() {
   /**
    * Extraer Configuracion del Sistema
    */
-  $.getJSON('config.json',function(response){
+  $.getJSON('app/config/config.json',function(response){
       
     if(response.result){
       if(response.data.titulo == ""){
-        $("title").text(_titulo);
+          $("title").text(_titulo);
       }else{
         $("title").text(response.data.titulo);
+        _UrlApi = response.data.webapi.url;
       }
     }
 
@@ -731,8 +760,20 @@ function _init() {
       MyAlert('Ingresa la contraseña');
 
     }else{
-      console.log('usuario:'+_usuario + ' pass:'+_password);
 
+      axios.post(
+        _UrlApi+"getRequestAuth",
+        {
+          usuario:_usuario,
+          password:_password
+        }
+      ).then(function(response){
+          MyConsole(response);
+
+      }).catch(function(error){
+          axiosError(error);
+      });
+    
     }
   });
 

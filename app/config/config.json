@@ -9,6 +9,14 @@
             "mail":"agomez.barron@gmail.com",
             "web":"http://www.hockma.com",
             "tel":"52 044 81 2153-0769"
+        },
+        "webapi":{
+            "url":"http://localhost/pedidos/api/",
+            "metodos":[
+                "uno",
+                "dos",
+                "tres"
+            ]
         }
     }
 }
