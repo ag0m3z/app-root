@@ -1,10 +1,25 @@
 body {
 
     background: rgb(0,108,207);
-background: linear-gradient(95deg, rgba(0,108,207,1) 1%, rgba(51,146,227,1) 12%, rgba(84,171,240,1) 30%, rgba(84,171,240,1) 73%, rgba(51,146,227,1) 89%, rgba(0,108,207,1) 99%);  
+    background: linear-gradient(95deg, rgba(0,108,207,1) 1%, rgba(51,146,227,1) 12%, rgba(84,171,240,1) 30%, rgba(84,171,240,1) 73%, rgba(51,146,227,1) 89%, rgba(0,108,207,1) 99%);  
 
 }
-
+.bg-black{
+    background: #252525;
+}
 .text-white{
     color:#fff !important;
 }
+.App {
+    text-align: center;
+}  
+.App-logo {
+    animation: App-logo-spin infinite 18s linear;
+    height: 80px;
+  }
+  
+  @keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  

@@ -1,0 +1,14 @@
+{
+    "result":true,
+    "message":"Datos del Sistema",
+    "data":{
+        "titulo":"Sistema de Pagos",
+        "version":"18.03.14",
+        "author":{
+            "nombre":"Alejandro Gomez",
+            "mail":"agomez.barron@gmail.com",
+            "web":"http://www.hockma.com",
+            "tel":"52 044 81 2153-0769"
+        }
+    }
+}
