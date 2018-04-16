@@ -1,3 +1,6 @@
+<?php
+use core\Session;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,7 +65,7 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class=" user user-menu">
                     <a href="#" >
-                        <i class="fa fa-user"></i> Nombre
+                        <i class="fa fa-user"></i> <?=Session::get('DataLogin','nombre') ?>
                     </a>
                 </li>
 
@@ -78,20 +81,28 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="active"><a href="#" ><i class="fa fa-dashboard  "></i> <span>Dashboard</span></a></li>
-            <li class=""><a href="#" ><i class="fa fa-dashboard  "></i> <span>Mesas</span></a></li>
-            <li class=""><a href="#" ><i class="fa fa-dashboard  "></i> <span>Pagos</span></a></li>
+
+            <li><a href="#" id="menu_mesas" ><i class="fa fa-bullseye"></i> <span>Mesas</span></a></li>
+            <li><a href="#" ><i class="fa fa-bicycle"></i> <span> Pedidos</span></a></li>
+            <li><a href="#" ><i class="fa fa-dollar"></i> <span>Caja</span></a></li>
+            <li><a href="#" ><i class="fa fa-money"></i> <span>Compras</span></a></li>
+            <li><a href="#" ><i class="fa fa-table"></i> <span>Inventario</span></a></li>
+            <li><a href="#" ><i class="fa fa-line-chart"></i> <span>Reportes</span></a></li>
+            <li><a href="#" ><i class="fa fa-list-alt"></i> <span>Catalogos</span></a></li>
+
+            <li><a href="#" ><i class="fa fa-gears"></i> <span>Configuración</span></a></li>
+            <li><a href="#" id="menu_salir" ><i class="fa fa-close text-red"></i><span>Salir</span> </a> </li>
         </ul>
     </section>
 </aside>
+
 <div class="wrapper">
-
     <div class="content-wrapper">
-        <section id="div_general" class="content">
-
+        <section id="app-root" class="content">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        Prueba
+                    <?=var_dump($_SESSION)?>
                     </div>
                 </div>
             </div>
@@ -102,12 +113,12 @@
 </div>
 
 <script src="plugins/jQuery/jQuery-2.2.0.min.js"></script>
-<script src="src/js/them.js"></script>
 <script src="plugins/jQueryUI/jquery-ui2.js"></script>
-
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 <script src="src/js/iKroAnimate.js"></script>
+<script src="src/js/app-theme.js"></script>
 <script src="src/js/app.js"></script>
 
 </body>

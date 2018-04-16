@@ -17,6 +17,16 @@ class CoreApp {
         echo "123";
     }
 
+    public static function returnHome($responseJson = false,$responseMsg = ''){
+
+        if($responseJson){
+            self::getResponseJson($responseMsg,false);
+        }else{
+            echo '<script>location.reload();</script>';
+        }
+
+    }
+
     /**
      * Funcion para Retornar la respuesta con Header JSON
      */
@@ -85,6 +95,7 @@ class CoreApp {
      */
     public static function getResponseJson($message = 'datos invalidos',$result = false, $data = array() ){
 
+        self::HeaderContetType();
         echo json_encode(array('result'=>$result,'message'=>$message,'data'=>$data) );
 
     }

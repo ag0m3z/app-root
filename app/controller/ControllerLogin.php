@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         array(
             'key'=>$data['key'],
             'idusuario'=>$data['idusuario'],
-            'idperfil'=>$data['idperfil'],
+            'idestatus'=>$data['idestatus'],
             'nombre'=>$data['nombre']
         )
     );

@@ -1,3 +1,3 @@
 <?php
 
-include "app/layout/home.html";
+include "app/layout/home.php";
